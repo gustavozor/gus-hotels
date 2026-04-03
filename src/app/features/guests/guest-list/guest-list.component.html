@@ -1,0 +1,17 @@
+<h1>Guests</h1>
+
+<div class="form">
+  <input placeholder="Name" [(ngModel)]="name">
+  <input placeholder="Email" [(ngModel)]="email">
+  <input placeholder="Phone (optional)" [(ngModel)]="phone">
+
+  <button (click)="addGuest()">Add Guest</button>
+</div>
+
+<div class="list">
+  <div class="card" *ngFor="let guest of guests()">
+    <h3>{{ guest.name }}</h3>
+    <p>{{ guest.email }}</p>
+    <p *ngIf="guest.phone">{{ guest.phone }}</p>
+  </div>
+</div>

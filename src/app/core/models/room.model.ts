@@ -1,0 +1,9 @@
+export type RoomStatus = 'available' | 'occupied' | 'cleaning';
+
+export interface Room {
+  id: string;
+  number: number;
+  type: 'single' | 'double' | 'suite';
+  price: number;
+  status: RoomStatus;
+}

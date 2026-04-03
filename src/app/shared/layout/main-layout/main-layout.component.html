@@ -1,0 +1,22 @@
+<div class="layout">
+  <aside class="sidebar">
+    <h2 routerLink="/">Gus Hotels</h2>
+
+    <nav>
+      <a routerLink="/">Dashboard</a>
+      <a routerLink="/rooms">Rooms</a>
+      <a routerLink="/bookings">Bookings</a>
+      <a routerLink="/guests">Guests</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <span>Hotel Management System</span>
+    </header>
+
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+</div>

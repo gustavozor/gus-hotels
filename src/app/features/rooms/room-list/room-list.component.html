@@ -1,0 +1,20 @@
+<div class="header">
+  <h1>Rooms</h1>
+  <button (click)="addMockRoom()">+ Add Room</button>
+</div>
+
+<div class="grid">
+  <div class="card" *ngFor="let room of rooms()">
+    
+    <div class="top">
+      <h2>Room {{ room.number }}</h2>
+      <span class="status" [ngClass]="room.status">
+        {{ room.status }}
+      </span>
+    </div>
+
+    <p>Type: {{ room.type }}</p>
+    <p>Price: €{{ room.price }}</p>
+
+  </div>
+</div>

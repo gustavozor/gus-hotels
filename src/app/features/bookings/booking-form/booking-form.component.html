@@ -1,0 +1,25 @@
+<h2>Create Booking</h2>
+
+<div class="form">
+
+  <label>Room</label>
+  <select [(ngModel)]="selectedRoomId">
+    <option value="">Select a room</option>
+    <option *ngFor="let room of rooms()" [value]="room.id">
+      Room {{ room.number }} ({{ room.status }})
+    </option>
+  </select>
+
+  <label>Check-in</label>
+  <input type="date" [(ngModel)]="checkIn">
+
+  <label>Check-out</label>
+  <input type="date" [(ngModel)]="checkOut">
+
+  <button (click)="createBooking()">Book</button>
+
+  <p class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </p>
+
+</div>
