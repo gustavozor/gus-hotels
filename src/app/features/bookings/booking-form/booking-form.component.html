@@ -25,6 +25,10 @@
   <label>Check-out</label>
   <input type="date" [(ngModel)]="checkOut">
 
+  <label>Notes</label>
+  <input type="text" [(ngModel)]="notes">
+
+  <div class="space-m"></div>
   <button (click)="createBooking()">Book</button>
 
   <p class="error" *ngIf="errorMessage">

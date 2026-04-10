@@ -18,7 +18,8 @@ export class BookingService {
                 checkIn: new Date(),
                 checkOut: new Date(new Date().getTime() + 86400000),
                 totalPrice: 150,
-                status: 'confirmed'
+                status: 'confirmed',
+                notes: ''
             }
         ]);
     }

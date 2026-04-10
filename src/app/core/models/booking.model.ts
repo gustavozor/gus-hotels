@@ -8,4 +8,5 @@ export interface Booking {
   checkOut: Date;
   totalPrice: number;
   status: BookingStatus;
+  notes?: string;
 }

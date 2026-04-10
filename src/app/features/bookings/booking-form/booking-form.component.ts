@@ -25,6 +25,7 @@ export class BookingFormComponent {
   selectedGuestId: string = '';
   checkIn: string = '';
   checkOut: string = '';
+  notes: string = '';
 
   errorMessage: string = '';
 
@@ -70,6 +71,7 @@ export class BookingFormComponent {
       this.checkIn = '';
       this.checkOut = '';
       this.errorMessage = '';
+      this.notes = '';
 
       alert('Booking created!');
 

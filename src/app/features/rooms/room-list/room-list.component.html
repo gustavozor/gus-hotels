@@ -16,5 +16,12 @@
     <p>Type: {{ room.type }}</p>
     <p>Price: €{{ room.price }}</p>
 
+    <div class="booking-info" *ngIf="getCurrentBooking(room.id) as booking">
+      <p><strong>Guest:</strong> {{ getGuestName(booking.guestId) }}</p>
+      <p><strong>Check-in:</strong> {{ booking.checkIn | date }}</p>
+      <p><strong>Check-out:</strong> {{ booking.checkOut | date }}</p>
+      <p *ngIf="booking.notes">{{ booking.notes }}</p>
+    </div>
+
   </div>
 </div>
