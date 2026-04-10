@@ -5,11 +5,11 @@
 
 <div class="grid">
   <div class="card" *ngFor="let room of rooms()">
-    
+
     <div class="top">
       <h2>Room {{ room.number }}</h2>
-      <span class="status" [ngClass]="room.status">
-        {{ room.status }}
+      <span class="status" [ngClass]="getStatus(room.id)">
+        {{ getStatus(room.id) }}
       </span>
     </div>
 

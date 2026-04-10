@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RoomService } from '../../../core/services/room.service';
+import { BookingService } from '../../../core/services/booking.service';
 
 @Component({
   selector: 'app-room-list',
@@ -10,11 +11,14 @@ import { RoomService } from '../../../core/services/room.service';
   styleUrls: ['./room-list.component.scss']
 })
 export class RoomListComponent {
+
   private roomService = inject(RoomService);
+  private bookingService = inject(BookingService);
 
   rooms = this.roomService.rooms$;
+  bookings = this.bookingService.bookings$;
 
-  addMockRoom() {
+  addMockRoom(): void {
     this.roomService.addRoom({
       id: Date.now().toString(),
       number: Math.floor(Math.random() * 100) + 200,
@@ -22,5 +26,9 @@ export class RoomListComponent {
       price: 120,
       status: 'available'
     });
+  }
+
+  getStatus(roomId: string): string {
+    return this.roomService.getRoomStatus(roomId, this.bookings());
   }
 }

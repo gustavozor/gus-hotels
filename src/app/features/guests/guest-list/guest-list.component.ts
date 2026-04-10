@@ -35,4 +35,8 @@ export class GuestListComponent {
     this.email = '';
     this.phone = '';
   }
+
+  searchGuest() {}
+
+  clear() {}
 }

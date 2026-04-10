@@ -9,14 +9,15 @@ export class BookingService {
     bookings$ = this.bookings;
 
     constructor() {
+        // initial mock
         this.bookings.set([
             {
                 id: '1',
                 guestId: '1',
                 roomId: '2',
                 checkIn: new Date(),
-                checkOut: new Date(),
-                totalPrice: 300,
+                checkOut: new Date(new Date().getTime() + 86400000),
+                totalPrice: 150,
                 status: 'confirmed'
             }
         ]);
@@ -35,5 +36,18 @@ export class BookingService {
         }
 
         this.bookings.update(list => [...list, newBooking]);
+    }
+
+    getBookings() {
+        return this.bookings();
+    }
+
+    isRoomAvailable(roomId: string, checkIn: Date, checkOut: Date): boolean {
+        return !this.bookings().some(b =>
+            b.roomId === roomId &&
+            b.status === 'confirmed' &&
+            checkIn < b.checkOut &&
+            checkOut > b.checkIn
+        );
     }
 }
